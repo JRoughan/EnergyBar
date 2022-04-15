@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Input;
 using EnergyBar.Native;
+using Prism.Commands;
 
 namespace EnergyBar
 {
@@ -10,15 +11,13 @@ namespace EnergyBar
         {
             get
             {
-                return new DelegateCommand
-                {
-                    CanExecuteFunc = () => !(Application.Current.MainWindow is AboutWindow),
-                    CommandAction = () =>
+                return new DelegateCommand(
+                    () =>
                     {
                         Application.Current.MainWindow = new AboutWindow();
                         Application.Current.MainWindow.Show();
-                    }
-                };
+                    },
+                    () => !(Application.Current.MainWindow is AboutWindow));
             }
         }
 
@@ -26,10 +25,7 @@ namespace EnergyBar
         {
             get
             {
-                return new DelegateCommand
-                {
-                    CommandAction = () => Application.Current.Shutdown()
-                };
+                return new DelegateCommand(() => Application.Current.Shutdown());
             }
         }
 
