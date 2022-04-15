@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using EnergyBar.Native;
 
 namespace EnergyBar
 {
@@ -43,7 +44,14 @@ namespace EnergyBar
 
         private static void ToggleStayAwake(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            
+            if ((bool)e.NewValue)
+            {
+                NativeMethods.SetThreadExecutionState(EXECUTION_STATE.ES_SYSTEM_REQUIRED | EXECUTION_STATE.ES_CONTINUOUS);
+            }
+            else
+            {
+                NativeMethods.SetThreadExecutionState(EXECUTION_STATE.ES_CONTINUOUS);
+            }
         }
     }
 }
