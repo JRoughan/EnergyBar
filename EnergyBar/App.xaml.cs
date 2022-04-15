@@ -8,19 +8,19 @@ namespace EnergyBar
     /// </summary>
     public partial class App
     {
-        private TaskbarIcon notifyIcon;
+        private TaskbarIcon _taskbarIcon;
 
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            notifyIcon = FindResource("TaskbarIcon") as TaskbarIcon;
-            notifyIcon.DataContext = new EnergyBarViewModel();
+            _taskbarIcon = FindResource("TaskbarIcon") as TaskbarIcon;
+            _taskbarIcon.DataContext = new EnergyBarViewModel { StayAwake = true };
             MainWindow = null;
         }
 
         protected override void OnExit(ExitEventArgs e)
         {
-            notifyIcon.Dispose();
+            _taskbarIcon.Dispose();
             base.OnExit(e);
         }
     }

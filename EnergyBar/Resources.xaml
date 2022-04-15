@@ -5,6 +5,7 @@
 
     <ContextMenu x:Shared="false" x:Key="TaskBarMenu">
         <MenuItem Header="About..." Command="{Binding AboutCommand}" />
+        <MenuItem Header="Stay Awake" IsChecked="{Binding StayAwake}" IsCheckable="True"  />
         <Separator />
         <MenuItem Header="Exit" Command="{Binding ExitCommand}" />
     </ContextMenu>

@@ -3,11 +3,8 @@ using System.Windows.Input;
 
 namespace EnergyBar
 {
-    public class EnergyBarViewModel
+    public class EnergyBarViewModel : DependencyObject
     {
-        /// <summary>
-        /// Shows About window if not already open.
-        /// </summary>
         public ICommand AboutCommand
         {
             get
@@ -24,9 +21,6 @@ namespace EnergyBar
             }
         }
 
-        /// <summary>
-        /// Shuts down the application.
-        /// </summary>
         public ICommand ExitCommand
         {
             get
@@ -36,6 +30,20 @@ namespace EnergyBar
                     CommandAction = () => Application.Current.Shutdown()
                 };
             }
+        }
+
+        public static readonly DependencyProperty StayAwakeProperty = DependencyProperty.Register(
+            "StayAwake", typeof(bool), typeof(EnergyBarViewModel), new PropertyMetadata(default(bool), new PropertyChangedCallback(ToggleStayAwake)));
+
+        public bool StayAwake
+        {
+            get { return (bool) GetValue(StayAwakeProperty); }
+            set { SetValue(StayAwakeProperty, value); }
+        }
+
+        private static void ToggleStayAwake(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            
         }
     }
 }
