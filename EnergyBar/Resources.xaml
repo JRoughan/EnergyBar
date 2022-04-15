@@ -2,7 +2,15 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:tb="http://www.hardcodet.net/taskbar"
                     >
+
+    <ContextMenu x:Shared="false" x:Key="TaskBarMenu">
+        <MenuItem Header="About..." Command="{Binding AboutCommand}" />
+        <Separator />
+        <MenuItem Header="Exit" Command="{Binding ExitCommand}" />
+    </ContextMenu>
+
     <tb:TaskbarIcon x:Key="TaskbarIcon"
-        IconSource="EnergyBar.ico"
-        ToolTipText="Energy Bar" />
+                    IconSource="EnergyBar.ico"
+                    ToolTipText="Energy Bar" 
+                    ContextMenu="{StaticResource TaskBarMenu}"/>
 </ResourceDictionary>

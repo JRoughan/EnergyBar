@@ -21,9 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="MainWindow.xaml.cs">
+    <Compile Update="AboutWindow.xaml.cs">
       <SubType>Code</SubType>
-      <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -34,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="MainWindow.xaml">
+    <Page Update="AboutWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

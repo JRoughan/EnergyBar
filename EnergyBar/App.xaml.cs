@@ -14,6 +14,8 @@ namespace EnergyBar
         {
             base.OnStartup(e);
             notifyIcon = FindResource("TaskbarIcon") as TaskbarIcon;
+            notifyIcon.DataContext = new EnergyBarViewModel();
+            MainWindow = null;
         }
 
         protected override void OnExit(ExitEventArgs e)
