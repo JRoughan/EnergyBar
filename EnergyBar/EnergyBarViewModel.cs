@@ -14,7 +14,7 @@ namespace EnergyBar
             {
                 return new DelegateCommand
                 {
-                    CanExecuteFunc = () => Application.Current.MainWindow == null,
+                    CanExecuteFunc = () => !(Application.Current.MainWindow is AboutWindow),
                     CommandAction = () =>
                     {
                         Application.Current.MainWindow = new AboutWindow();

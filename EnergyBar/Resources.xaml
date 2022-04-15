@@ -12,5 +12,6 @@
     <tb:TaskbarIcon x:Key="TaskbarIcon"
                     IconSource="EnergyBar.ico"
                     ToolTipText="Energy Bar" 
+                    DoubleClickCommand="{Binding AboutCommand}"
                     ContextMenu="{StaticResource TaskBarMenu}"/>
 </ResourceDictionary>
