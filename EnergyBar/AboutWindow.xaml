@@ -13,7 +13,7 @@
         <Button DockPanel.Dock="Bottom" Margin="10" Height="40" Width="80" Click="OkButton_OnClick">OK</Button>
         <GroupBox DockPanel.Dock="Bottom" Margin="10">
             <StackPanel>
-                <TextBlock FontSize="18">Thanks</TextBlock>
+                <TextBlock FontSize="18" TextAlignment="Center">Thanks</TextBlock>
                 <Separator/>
                 <TextBlock><Hyperlink NavigateUri="https://github.com/hardcodet/wpf-notifyicon">Hardcodet NotifyIcon for WPF</Hyperlink></TextBlock>
                 <TextBlock><Hyperlink NavigateUri="https://www.flaticon.com/free-icons/snack">Snack icons created by monkik - Flaticon</Hyperlink></TextBlock>
@@ -21,7 +21,10 @@
         </GroupBox>
         <GroupBox DockPanel.Dock="Bottom" Margin="10">
             <StackPanel>
-                <TextBlock FontSize="18">Energy Bar</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="EnergyBar.ico" Height="32" Width="32" Margin="10"></Image>
+                    <TextBlock FontSize="18" TextAlignment="Center" VerticalAlignment="Center">Energy Bar</TextBlock>
+                </StackPanel>
                 <Separator/>
                 <TextBlock>Copyright (c) 2022 - Jared Roughan</TextBlock>
                 <TextBlock>Source code available on <Hyperlink NavigateUri="https://github.com/JRoughan/EnergyBar">GitHub</Hyperlink></TextBlock>

@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Windows;
 using EnergyBar.Native;
 
-namespace EnergyBar
+namespace EnergyBar.Domain
 {
-    internal static class SystemState
+    internal static class SystemStateHandler
     {
         private static bool _allowSleep = false;
         private static bool _allowScreenLock = false;

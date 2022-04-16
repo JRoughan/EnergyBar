@@ -1,5 +1,5 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
+using EnergyBar.Domain;
 using Hardcodet.Wpf.TaskbarNotification;
 
 namespace EnergyBar
@@ -7,13 +7,11 @@ namespace EnergyBar
     public partial class App
     {
         private TaskbarIcon _taskbarIcon;
-        private bool _disableScreenLockOnStartup = true;
-        private bool _disableSleepOnStartup = true;
 
         public App()
         {
-            AppDomain.CurrentDomain.UnhandledException += (s, e) =>
-                MessageBox.Show((e.ExceptionObject as Exception)?.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            ErrorHandler.RegisterGlobalErrorHandler();
+            NavigationHandler.RegisterGlobalHyperlinkHandler();
         }
 
         protected override void OnStartup(StartupEventArgs e)
@@ -22,8 +20,8 @@ namespace EnergyBar
             _taskbarIcon = FindResource("TaskbarIcon") as TaskbarIcon;
             _taskbarIcon.DataContext = new ViewModel
             {
-                DisableScreenLock = _disableScreenLockOnStartup,
-                DisableSleep = _disableSleepOnStartup
+                DisableScreenLock = ConfigurationHandler.DisableScreenLockOnStartup,
+                DisableSleep = ConfigurationHandler.DisableSleepOnStartup
             };
         }
 

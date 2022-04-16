@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using EnergyBar.Domain;
 using Prism.Commands;
 
 namespace EnergyBar
@@ -41,11 +42,11 @@ namespace EnergyBar
         {
             if ((bool)e.NewValue)
             {
-                SystemState.DisableSleep();
+                SystemStateHandler.DisableSleep();
             }
             else
             {
-                SystemState.EnableSleep();
+                SystemStateHandler.EnableSleep();
             }
         }
 
@@ -62,11 +63,11 @@ namespace EnergyBar
         {
             if ((bool)e.NewValue)
             {
-                SystemState.DisableScreenLock();
+                SystemStateHandler.DisableScreenLock();
             }
             else
             {
-                SystemState.EnableScreenLock();
+                SystemStateHandler.EnableScreenLock();
             }
         }
     }
