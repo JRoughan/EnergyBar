@@ -24,5 +24,11 @@ namespace EnergyBar
         {
             InitializeComponent();
         }
+
+        private void OkButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+            Application.Current.MainWindow = null;
+        }
     }
 }

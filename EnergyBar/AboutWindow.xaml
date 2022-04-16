@@ -4,9 +4,28 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EnergyBar"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="ToolWindow"
+        Icon="EnergyBar.ico"
         mc:Ignorable="d"
-        Title="Energy Bar" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="Energy Bar - About" Height="350" Width="350">
+    <DockPanel>
+        <Button DockPanel.Dock="Bottom" Margin="10" Height="40" Width="80" Click="OkButton_OnClick">OK</Button>
+        <GroupBox DockPanel.Dock="Bottom" Margin="10">
+            <StackPanel>
+                <TextBlock FontSize="18">Thanks</TextBlock>
+                <Separator/>
+                <TextBlock><Hyperlink NavigateUri="https://github.com/hardcodet/wpf-notifyicon">Hardcodet NotifyIcon for WPF</Hyperlink></TextBlock>
+                <TextBlock><Hyperlink NavigateUri="https://www.flaticon.com/free-icons/snack">Snack icons created by monkik - Flaticon</Hyperlink></TextBlock>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox DockPanel.Dock="Bottom" Margin="10">
+            <StackPanel>
+                <TextBlock FontSize="18">Energy Bar</TextBlock>
+                <Separator/>
+                <TextBlock>Copyright (c) 2022 - Jared Roughan</TextBlock>
+                <TextBlock>Source code available on <Hyperlink NavigateUri="https://github.com/JRoughan/EnergyBar">GitHub</Hyperlink></TextBlock>
+            </StackPanel>
+        </GroupBox>
+    </DockPanel>
 </Window>
