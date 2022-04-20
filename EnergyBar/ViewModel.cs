@@ -30,7 +30,7 @@ namespace EnergyBar
         }
 
         public static readonly DependencyProperty DisableSleepProperty = DependencyProperty.Register(
-            nameof(DisableSleep), typeof(bool), typeof(ViewModel), new PropertyMetadata(default(bool), new PropertyChangedCallback(ToggleDisableSleep)));
+            nameof(DisableSleep), typeof(bool), typeof(ViewModel), new PropertyMetadata(default(bool), ToggleDisableSleep));
 
         public bool DisableSleep
         {
@@ -51,7 +51,7 @@ namespace EnergyBar
         }
 
         public static readonly DependencyProperty DisableScreenLockProperty = DependencyProperty.Register(
-            nameof(DisableScreenLock), typeof(bool), typeof(ViewModel), new PropertyMetadata(default(bool), new PropertyChangedCallback(ToggleDisableScreenLock)));
+            nameof(DisableScreenLock), typeof(bool), typeof(ViewModel), new PropertyMetadata(default(bool), ToggleDisableScreenLock));
 
         public bool DisableScreenLock
         {

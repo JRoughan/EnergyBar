@@ -25,6 +25,12 @@ namespace EnergyBar
             };
         }
 
+        protected override void OnSessionEnding(SessionEndingCancelEventArgs e)
+        {
+            SystemStateHandler.EnableSleep();
+            SystemStateHandler.EnableScreenLock();
+        }
+
         protected override void OnExit(ExitEventArgs e)
         {
             _taskbarIcon.Dispose();
